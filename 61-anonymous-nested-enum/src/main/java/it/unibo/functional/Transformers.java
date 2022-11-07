@@ -54,7 +54,13 @@ public final class Transformers {
      * @param <O> output elements type
      */
     public static <I, O> List<O> transform(final Iterable<I> base, final Function<I, O> transformer) {
-        return null;
+        var list = Transformers.flattenTransform(base, new Function<I,Collection<O>>() {
+            @Override
+            public Collection<O> call(I input) {
+                return List.of(transformer.call(input));
+            }  
+        });
+        return list;
     }
 
     /**
