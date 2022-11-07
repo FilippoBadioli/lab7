@@ -2,7 +2,7 @@ package it.unibo.functional;
 
 import it.unibo.functional.api.Function;
 import org.junit.jupiter.api.Test;
-//try
+
 import java.util.List;
 
 import static it.unibo.functional.Transformers.flatten;
