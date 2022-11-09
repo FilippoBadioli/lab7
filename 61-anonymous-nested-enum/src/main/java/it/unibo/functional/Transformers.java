@@ -76,7 +76,8 @@ public final class Transformers {
      * @param <I> type of the collection elements
      */
     public static <I> List<? extends I> flatten(final Iterable<? extends Collection<? extends I>> base) {
-        return null;
+        var result = Transformers.flattenTransform(base, Function.identity());
+        return result;
     }
 
     /**
