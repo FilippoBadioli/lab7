@@ -103,7 +103,6 @@ public final class Transformers {
                 }
                 return list;
             }
-           
         });
         return result;
     }
@@ -121,6 +120,16 @@ public final class Transformers {
      * @param <I> elements type
      */
     public static <I> List<I> reject(final Iterable<I> base, final Function<I, Boolean> test) {
-        return null;
+        final var result = Transformers.flattenTransform(base, new Function<I, Collection<I>>() {
+            @Override
+            public Collection<I> call(I input) {
+                var list = new ArrayList<I>();
+                if(!test.call(input)) {
+                    list.add(input);
+                }
+                return list;
+            }
+        });
+        return result;
     }
 }

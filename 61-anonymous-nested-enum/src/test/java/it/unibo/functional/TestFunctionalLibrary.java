@@ -61,11 +61,11 @@ class TestFunctionalLibrary {
             List.of("sit", "amet", "adipiscing", "sed"),
             select(LOREM_IPSUM, startsWithAOrS)
         );
-        /* 
+        
         assertEquals(
             List.of("Lorem", "ipsum", "dolor", "consectetur", "elit", "do", "eiusmod", "tempor", "incididunt"),
             reject(LOREM_IPSUM, startsWithAOrS)
         );
-        */
+        
     }
 }
